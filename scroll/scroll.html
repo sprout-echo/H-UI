@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width:device-width;initial-scale:1">
+	<title>自定义滚动条</title>
+	
+</head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+#mainBox{
+	position: relative;
+	width: 550px;
+	height:200px;
+	background: #f96;
+	overflow: hidden;
+	margin: 50px auto;
+	border-radius: 3px;
+}
+#contentTwo,
+#content{
+	position: absolute;
+	height:1000px;
+	left:0;
+	top:0;
+	color: #fff;
+}
+.scrollDiv{
+	position: absolute;
+	width: 8px;
+	top:0;
+	background: #ff0;
+	border-radius: 10px;
+}
+#mainTwo{
+	position: relative;
+	width: 550px;
+	height:200px;
+	background: #c34;
+	overflow: hidden;
+	border-radius: 3px;
+}
+.scrollDiv2{
+	position: absolute;
+	width: 8px;
+	top:0;
+	background: #ff0;
+	border-radius: 10px;
+}
+</style>
+<body>
+	<center>
+		<h1>自定义H-scroll滚动条插件</h1>
+		<p>兼容各大主流浏览器 IE5+,chrome,firefox等</p>
+		<div id="mainBox">
+			<div id="content">自定义滚动条1<br>基础版本</div>
+		</div>
+
+		<div id="mainTwo">
+			<div id="contentTwo">自定义滚动条2<br>支持透明度变化</div>
+		</div>
+	</center>
+	
+</body>
+<script src="scroll.js"></script>
+<script type="text/javascript">
+ 	new addScroll('mainBox','content','scrollDiv');
+    new addScroll('mainTwo','contentTwo','scrollDiv2','0.5');
+
+</script>
+</html>
