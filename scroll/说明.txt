@@ -1,0 +1,19 @@
+函数：
+  
+bind() 绑定事件
+mouseWheel() 鼠标滚轮事件
+addScroll() 添加滚动条
+
+在addScroll.prototype原型链中定义函数：
+init() 初始化，调用其他函数
+createScroll() 创建滚动条 createElement
+resizeScroll() 设置p==>scrollBox的样式，
+	       根据mainbox和contentBox的高度比例获得滑块的高度
+		当计算得到的滑块高度>mainbox的高度时，滑块就会消失
+_tragScroll() onmousedown按下鼠标时 移动时执行scrollGo函数
+	      onmouseover
+	      onmouseout
+	      scrollGo()
+	      【offsetHeight = 内容可视区域的高度+ 滚动条 + 边框】
+_wheelChange() 调用mouseWheel()函数
+_clickScroll（）点击滚动条，使滑块移动

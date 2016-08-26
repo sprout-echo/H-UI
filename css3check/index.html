@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>check</title>
+<style type="text/css">
+.sliderOne{
+	width: 80px;
+	height:26px;
+	background: #333;
+	margin: 20px auto;
+	position: relative;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),0px 1px 0px rgba(255,255,255,0.2);
+}
+.sliderOne:after{
+	content:'OFF';
+	color:#000;
+	position: absolute;
+	right: 10px;
+	z-index: 0;
+	font:12px/26px Arial,sans-serif;
+	font-weight: bold;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.15);
+}
+.sliderOne:before{
+	content:'ON';
+	color: #27ae60;
+	position: absolute;
+	left:10px;
+	z-index: 0;
+	font:12px/26px Arial,sans-serif;
+	font-weight: bold;
+}
+.sliderOne label{
+	display: block;
+	width: 34px;
+	height: 20px;
+	border-radius: 50px;
+	cursor: pointer;
+	position: absolute;
+	top: 3px;
+	left:3px;
+	z-index: 1;
+	background: #fcfff4;
+	background:-webkit-linear-gradient(top,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
+	background:linear-gradient(to bottom,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
+	-webkit-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+}
+.sliderOne input{
+	visibility: hidden;
+}
+/*+是兄弟选择器，组合前后两个选择器，选择器中的元素有相同的父元素，并且第二个必须紧随着第一个出现。input框如果被用户勾选了，其后面的label元素会有相应的样式变化。 */ 
+.sliderOne input:checked+label{
+	left:43px;
+}
+
+
+.sliderTwo{
+	width: 80px;
+	height:30px;
+	background: #333;
+	margin: 20px auto;
+	position: relative;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),0px 1px 0px rgba(255,255,255,0.2); 
+}
+.sliderTwo:after{
+	content:'';
+	position: absolute;
+	top:14px;
+	left:14px;
+	height:2px;
+	width: 52px;
+	background: #111;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),0px 1px 0px rgba(255,255,255,0.2);
+}
+.sliderTwo label{
+	display: block;
+	width: 22px;
+	height: 22px;
+	border-radius: 50px;
+	cursor: pointer;
+	position: absolute;
+	top:4px;
+	left: 4px;
+	z-index: 1;
+	background: #fcfff4;
+	-webkit-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	background: -webkit-linear-gradient(top,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
+	background: linear-gradient(to bottom,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%);  /*渐变*/
+}
+.sliderTwo label:after{
+	content:'';
+	width:10px;
+	height: 10px;
+	position: absolute;
+	top:6px;
+	left:6px;
+	background: #333;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px black,0px 1px 0px rgba(255,255,255,0.9);
+}
+.sliderTwo input{
+	visibility: hidden;
+}
+.sliderTwo input:checked+label{
+	left:54px;
+}
+.sliderTwo input:checked+label:after{
+	background: #27ae60;
+}
+
+.roundOne{
+	width: 28px;
+	height: 28px;
+	position: relative;
+	margin: 20px auto;
+	background: #fcfff4;
+	background: -webkit-linear-gradient(top,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%);
+	background: linear-gradient(to bottom,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%); 
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px white,0px 1px 3px rgba(0,0,0,0.5);
+}
+.roundOne label{
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
+	cursor: pointer;
+	position: absolute;
+	left: 4px;
+	top:4px;
+	background: -webkit-linear-gradient(top,#222222 0%,#45484d 100%);
+	background: linear-gradient(to bottom,#222222 0%,#45484d 100%);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),0px 1px 1px white;
+}
+.roundOne label:after{
+	content:'';
+	width: 16px;
+	height:16px;
+	position: absolute;
+	top:2px;
+	left:2px;
+	background: -webkit-linear-gradient(top,#27ae60 0%,#145b32 100%);
+	background: linear-gradient(to bottom,#27ae60 0%,#145b32 100%);
+	opacity: 0;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px white,0px 1px 3px rgba(0,0,0,0.5);
+}
+.roundOne label:hover::after{
+	opacity: 0.3;
+}
+.roundOne input{
+	visibility: hidden;
+}
+.roundOne input:checked+label:after{
+	opacity: 1;
+}
+</style>
+</head>
+<body>
+	<div class="sliderOne">
+		<input type="checkbox" value="none" name="check" id="sliderOne" checked />
+		<label for="sliderOne"></label>
+	</div>
+	<div class="sliderTwo">
+		<input type="checkbox" value="none" name="check" id="sliderTwo" checked />
+		<label for="sliderTwo"></label>
+	</div>
+	<div class="roundOne">
+		<input type="checkbox" value="none" id="roundOne" name="check" checked />
+		<label for="roundOne"></label>
+	</div>
+</body>
+</html>

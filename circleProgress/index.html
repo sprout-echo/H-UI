@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>环形进度条</title>
+	<style>
+	.default,
+    .custom,
+    .zero,
+    .noAnimation{
+		width: 24%;
+		float: left;
+        margin-left: 10px;
+	}
+	.code{
+        font-size: 12px;
+    }
+	button{
+            background: #66f;
+            padding: 10px;
+            border:1px;
+            cursor: pointer;
+            width: 150px;
+            color: #fff;
+            border-radius: 3px;
+            margin: 20px 500px;
+        }
+	</style>
+</head>
+<body>
+    <h2>环形进度条插件</h2>
+	<div class="default">
+		<p>1. Default options</p>
+		<p><canvas id="circle-progress-default" width="150" height="150"></canvas></p>
+        <div class="code">
+            <pre>
+circleProgress({
+    id: 'circle-progress-default'
+ });
+            </pre>
+        </div>
+	</div>
+
+	<div class="custom">
+		<p>2. Custom options</p>
+		<p><canvas id="circle-progress-custom" width="150" height="150"></canvas></p>
+		<div class="code">
+            <pre>
+circleProgress({
+    id: 'circle-progress-custom',
+    progress: 70,        // default: 100
+    duration: 2000,     // default: 1000
+    color: 'red',       // default: 'rgb(52, 145, 204)'
+    bgColor: 'green',   // default: 'rgb(230, 230, 230)'
+    textColor: 'blue',  // default: 'black'
+    progressWidth: 0.15,// default: 0.25 (r)
+    fontScale: 0.5,    // default: 0.4 (r)
+    toFixed: 1        // default: 0
+});
+            </pre>
+        </div>
+	</div>
+
+	<div class="zero">
+		<p>3. Zero progress</p>
+		<p><canvas id="circle-progress-zero" width="150" height="150"></canvas></p>
+		<div class="code">
+            <pre>
+circleProgress({
+    id: 'circle-progress-zero',
+    progress: 0 // default: 100
+});
+            </pre>
+
+        </div>
+	</div>
+
+	<div class="noAnimation">
+		<p>4. No animation</p>
+		<p><canvas id="circle-progress-no-animation" width="150" height="150"></canvas></p>
+		<div class="code">
+            <pre>
+circleProgress({
+    d: 'circle-progress-no-animation',
+    progress:55,
+    duration: 0 // default: 1000
+});
+            </pre>
+        </div>
+	</div>
+	<button onclick="showMe();">显 示</button>
+<script type="text/javascript" src="circleProgress.js"></script>
+<script type="text/javascript">
+    var showMe = function () {
+        circleProgress({
+            id: 'circle-progress-default'
+        });
+        circleProgress({
+            id: 'circle-progress-custom',
+            progress: 70,          // default: 100
+            duration: 2000,        // default: 1000
+            color: '#c33',         // default: 'rgb(52, 145, 204)'
+            bgColor: '#ff0',      // default: 'rgb(230, 230, 230)'
+            textColor: 'blue',    // default: 'black'
+            progressWidth: 0.35, // default: 0.25 (r)
+            fontScale: 0.3,      // default: 0.4 (r)
+            toFixed: 1          // default: 0
+        });
+        circleProgress({
+            id: 'circle-progress-zero',
+            progress: 0        // default: 100
+        });
+        circleProgress({
+            id: 'circle-progress-no-animation',
+            progress:55,
+            duration: 0       // default: 1000
+        });
+    };
+    showMe();
+</script>
+</body>
+</html>
