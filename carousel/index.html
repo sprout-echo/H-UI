@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>旋转木马</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="carousel.js"></script>
+</head>
+<body style="padding:50px">
+	<div class="J_Poster poster-main" data-setting='{
+			"width":1200,
+			"height":300,
+			"posterWidth":640,
+			"posterHeight":270,
+			"scale":0.8,
+			"speed":500,
+			"autoPlay":true,
+			"delay":2000,
+			"verticalAlign":"middle"
+}'>
+		<div class="poster-btn poster-prev-btn"></div>
+		<div class="poster-btn poster-next-btn"></div>
+		<ul class="poster-list">
+			<li class="poster-item"><a href="#"><img src="img/1.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/2.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/3.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/4.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/5.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/2.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/3.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/4.jpg" width="100%"></a></li>
+			<li class="poster-item"><a href="#"><img src="img/5.jpg" width="100%"></a></li>
+		</ul>
+		
+	</div>
+
+
+<script type="text/javascript">
+$(function(){
+	//var carousel = new Carousel($("J_Poster").eq(0));
+	
+	Carousel.init($(".J_Poster"));
+});
+</script>
+</body>
+</html>
